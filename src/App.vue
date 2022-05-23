@@ -22,9 +22,19 @@ export default {
     };
   },
   mounted: function () {
+    this.getNama();
     this.ubahKalimat1();
   },
   methods: {
+    getNama() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const nama = urlParams.get("nama");
+
+      if (nama != null) {
+        this.kalimat1 = `Hi, ${nama}!`;
+      }
+    },
     ubahKalimat1() {
       const timer1 = setInterval(() => {
         if (this.i1 < this.kalimat1.length) {

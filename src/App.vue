@@ -4,6 +4,10 @@
       <h1 id="teks1"></h1>
       <h1 id="teks2"></h1>
       <h1 id="teks3"></h1>
+      <video width="320" height="240" controls id="video-rickroll">
+        <source src="@/assets/rickroll.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   </div>
 </template>
@@ -80,7 +84,8 @@ export default {
     },
     playRickroll() {
       setTimeout(() => {
-        location.href = "https://youtu.be/dQw4w9WgXcQ";
+        document.getElementById("video-rickroll").play();
+        // location.href = "https://youtu.be/dQw4w9WgXcQ";
       }, 3000);
     },
   },

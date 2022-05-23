@@ -4,7 +4,14 @@
       <h1 id="teks1"></h1>
       <h1 id="teks2"></h1>
       <h1 id="teks3"></h1>
-      <video width="320" height="240" controls id="video-rickroll">
+      <video
+        style="display: none"
+        width="320"
+        height="240"
+        controls
+        id="video-rickroll"
+        poster="@/assets/friendship.jpg"
+      >
         <source src="@/assets/rickroll.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -78,6 +85,7 @@ export default {
           this.i3++;
         } else {
           clearInterval(timer3);
+          document.getElementById("video-rickroll").style.display = "inline";
           this.playRickroll();
         }
       }, 100);

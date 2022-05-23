@@ -23,6 +23,7 @@ export default {
   },
   mounted: function () {
     this.getNama();
+    this.getAsal();
     this.ubahKalimat1();
   },
   methods: {
@@ -33,6 +34,15 @@ export default {
 
       if (nama != null) {
         this.kalimat1 = `Hi, ${nama}!`;
+      }
+    },
+    getAsal() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const asal = urlParams.get("asal");
+
+      if (asal != null) {
+        this.kalimat2 = `Ini aku, ${asal}. Aku mau liatin video bermakna.`;
       }
     },
     ubahKalimat1() {
